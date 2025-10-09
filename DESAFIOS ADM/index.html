@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Painel de Tarefas</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Painel de Progresso</h1>
+      <div class="controls">
+        <button id="addTaskBtn" class="btn">Adicionar tarefa</button>
+        <button id="clearAll" class="btn ghost" title="Apagar tudo">Limpar tudo</button>
+      </div>
+    </header>
+
+    <main class="board" id="board">
+      <div id="tasksContainer"></div>
+    </main>
+  </div>
+
+  <!-- Modal -->
+  <div class="modalBackdrop" id="modalBackdrop">
+    <div class="modal">
+      <h2>Adicionar nova tarefa</h2>
+
+      <div class="field">
+        <label for="titleInput">Título</label>
+        <input id="titleInput" type="text" placeholder="Ex: Lista de Exercícios">
+      </div>
+
+      <div class="field">
+        <label for="descInput">Descrição</label>
+        <input id="descInput" type="text" placeholder="Ex: Acerte todas as questões...">
+      </div>
+
+      <div class="formRow">
+        <div class="field">
+          <label for="currentInput">Progresso atual</label>
+          <input id="currentInput" type="number" min="0" value="0">
+        </div>
+        <div class="field">
+          <label for="totalInput">Total</label>
+          <input id="totalInput" type="number" min="1" value="3">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="iconSelect">Ícone</label>
+        <select id="iconSelect">
+          <option value="clipboard">Lista de Exercícios</option>
+          <option value="clock">Tempo de Estudos</option>
+          <option value="pdf">PDFs</option>
+          <option value="custom">Genérico</option>
+        </select>
+      </div>
+
+      <div class="modalFooter">
+        <button id="cancelModal" class="btn ghost">Cancelar</button>
+        <button id="saveTask" class="btn">Salvar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
