@@ -1,0 +1,105 @@
+body {
+    background-color: #f7f7f7;
+    font-family: Arial, sans-serif;
+}
+
+.tasks-progress {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.icon-text-group {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.imagem {
+    width: 45px;
+    height: 45px;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f7e8f4;
+    border-radius: 8px;
+}
+
+.imagem img {
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.task-content {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex-grow: 1;
+}
+
+.task-title {
+    font-size: 1em;
+    font-weight: bold;
+    color: #333;
+}
+
+.task-description {
+    font-size: 0.85em;
+    color: #666;
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 8px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background-color: #8a006b;
+    width: 0;
+    transition: width 0.8s ease; /* Faz a barra subir suavemente */
+    border-radius: 4px;
+}
+
+.right-side {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+}
+
+.progress-text {
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #333;
+}
+
+.upload-btn {
+    background-color: #8a006b;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.upload-btn:hover {
+    background-color: #a00080;
+}
