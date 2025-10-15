@@ -60,7 +60,7 @@ header nav ul{
 header nav ul li{
     display: inline-block;
     padding: 0 80px;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 header a img{
@@ -92,28 +92,19 @@ header a img{
 
 .eventos{
     padding: 6rem 2rem;
+    gap: 18px;
+    display: grid;
+    grid-template-columns: 1fr;
 }
 
 .eventos-titulo{
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 50px;
-}
-
-.evento-caixa{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 4rem;
-    max-width: 1800px;
-    margin: 0 auto;
+    font-size: 2rem;
+    margin: 50px;
 }
 
 .eventos-card{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 800px;
+    height: 500remx;
     padding: 1rem 1rem; /* espaço extra no fundo pro botão */
     background: #88005b;
     border-radius: 16px;
@@ -123,6 +114,18 @@ header a img{
     transition: all 0.3s ease;
     cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.30) 0px 3px 8px;
+}
+
+@media screen and (min-width: 600px) {
+    .eventos {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .eventos {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }
 
 .eventos-card:hover {
