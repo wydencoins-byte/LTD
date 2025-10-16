@@ -104,9 +104,12 @@ header a img{
 }
 
 .eventos-card{
-    height: 500remx;
+    height: 50rem;
     padding: 1rem 1rem; /* espaço extra no fundo pro botão */
     background: #88005b;
+    margin-block: 0.75rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
     border-radius: 16px;
     backdrop-filter: blur(5px);
     border: 1px solid var(--vidro);
@@ -134,7 +137,7 @@ header a img{
 }
 
 .evento-image{
-    height: 350px;
+    height: 360px;
     width: 100%;
     object-fit: cover;
 }
