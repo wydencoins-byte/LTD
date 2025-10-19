@@ -211,7 +211,7 @@ header a img{
 }
 
 
- .modal-overlay {
+    .modal-overlay {
             display: none; /* CRÍTICO: Começa escondido, JS muda para 'flex' */
             position: fixed;
             top: 0;
@@ -301,11 +301,58 @@ header a img{
 }
 
 
-.botao-principal:hover {
-    background-color: #44002d;
+
+.eventos-cardadm{
+    height: 50rem;
+    width: 100%; 
+    max-width: 595px;
+    padding: 1rem 1rem; /* espaço extra no fundo pro botão */
+    background: #88005b;
+    margin-block: 0.75rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    border-radius: 16px;
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--vidro);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: rgba(0, 0.30, 0.30, 0.30) 10px 20px 8px;
 }
 
+.evento-imageadm{
+    height: 360px;
+    width: 100%;
+    object-fit: cover;
+}
 
+.botao-primario {
+    background-color: #88005b;
+    color: white;
+    border: none;
+    padding:15px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 1.3rem;
+    transition: background-color 0.3s ease;
+}
+.botao-primario:hover {
+    background-color: #44003d;
+}
+.botao-secundario {
+    background-color: #88005b;
+    color: white;
+    border: none;
+    padding:15px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 1.3rem;
+    transition: background-color 0.3s ease;
+}
+.botao-secundario:hover {
+    background-color: #44003d;
+}
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(-50px); }
             to { opacity: 1; transform: translateY(0); }
