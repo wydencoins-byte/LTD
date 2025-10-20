@@ -300,8 +300,6 @@ header a img{
     font-size: 30px;
 }
 
-
-
 .eventos-cardadm{
     height: 50rem;
     width: 100%; 
@@ -316,7 +314,7 @@ header a img{
     border: 1px solid var(--vidro);
     overflow: hidden;
     transition: all 0.3s ease;
-    box-shadow: rgba(0, 0.30, 0.30, 0.30) 10px 20px 8px;
+  
 }
 
 .evento-imageadm{
@@ -350,6 +348,7 @@ header a img{
     font-size: 1.3rem;
     transition: background-color 0.3s ease;
 }
+
 .botao-secundario:hover {
     background-color: #44003d;
 }
