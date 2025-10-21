@@ -202,56 +202,61 @@
         </div>
     </div>
 
-    <!-- CADASTRAR EVENTO -->
+    <!-- CADASTRAR EVENTO E MODAL-->
 
-    <div class="conteiner-lado-a-lado">
-        <button id="botaoCadastrar" class="botao-principal">Cadastrar Evento</button>
-    </div>
-
-    <!-- MODAL DE CADASTRO -->
-
-    <div id="etapa" class="etapa" style="display: none;">
-        <div id="etapa1" class="etapa">
-            <div class="eventos-cardadm">
-                <div class="visualizacao-evento">
-                    <img src="image/logofaci.png" alt="Evento Cadastro" class="evento-imageadm">
-                    <div class="caixa-texto-eventoadm">
-                        <h3 class="info-evento">Título</h3>
-                        <p class="paragra-evento">Adicione aqui a descrição...</p>
-                    </div>
-                </div>
+    <form action="" method="post">
+        <div class="botao-add-card">
+            <input type="submit" name="botaoCadastrar" class="botao-principal" value="Adicionar evento" />
+        </div>
+        <div class="add-evento-card">
+            <div class="add-imagem">
+                <label for="imagem">Adicione a imagem promocional do evento:</label>
+                <input type="file" name="imagem" id="imagem" required /> <!-- tem que fazer uma lógica no js para verificar se esse arquivo é uma imgagem (.png, .jpg, etc...) -->
             </div>
-            <div class="modal-actions">
-                <button onclick="mostrarEtapa('etapa0')" class="botao-primario">Fechar</button>
-                <button onclick="mostrarEtapa('etapa2')" class="botao-secundario">Próximo</button>
+            <div class="add-titulo">
+                <label for="titulo">Adicionar o título do evento:</label>
+                <input type="text" name="titulo" id="titulo" required />
+            </div>
+            <div class="add-descricao">
+                <label for="descricao">Adicione a descrição do evento:</label>
+                <input type="text" name="descricao" id="descricao" required />
             </div>
         </div>
-
-    <div id="etapa2" class="etapa" style="display: none;">
-        <div class="modal-card">
-            <h2 class="modal-titulo">Adicionar Título</h2>
-            <p><strong>Data:</strong> 00/00/00</p>
-            <p><strong>Horário:</strong> 00h00min</p>
-            <p><strong>Local:</strong> Local</p>
-            <p><strong>Requisitos:</strong> Requisitos para o candidato(Mais descrição).</p>
-            <div class="modal-actions">
-                <button onclick="mostrarEtapa('etapa1')" class="botao-terciario">Anterior</button>
-                <button onclick="mostrarEtapa('etapa3')" class="botao-secundario">Próximo</button>
+        <div class="add-modal-card">
+            <div class="add-modal-titulo">
+                <label for="titulo">Adicione o título do modal aqui:</label>
+                <input type="text" name="titulo" id="titulo" required /> <!-- tem que fazer uma lógica no js para verificar se esse arquivo é uma imgagem (.png, .jpg, etc...) -->
+            </div>
+            <div class="add-modal-data-inicio">
+                <label for="data-inicio">Adicione a data de inicion do evento:</label>
+                <input type="date" name="data-inicio" id="data-inicio" required />
+            </div>
+            <div class="add-modal-data-fim">
+                <label for="data-fim">Adicione a data do fim do evento:</label>
+                <input type="date" name="data-fim" id="data-fim" required />
+            </div>
+            <div class="add-horario-inicio">
+                <label for="horario-inicio">Adicione a hora de inicio do evento:</label>
+                <input type="time" name="horario-inicio" id="horario-inicio" required />
+            </div>
+            <div class="add-horario-fim">
+                <label for="horario-fim">Adicione a hora de fim do evento:</label>
+                <input type="time" name="horario-fim" id="horario-fim" required />
+            </div>
+            <div class="add-local">
+                <label for="local">Adicione o local em que o evento ocorrerá:</label>
+                <input type="text" name="local" id="local" required />
+            </div>
+            <div class="add-requisitos">
+                <label for="requisitos">Adicione os requisitos para participar do evento:</label>
+                <input type="text" name="requisitos" id="requisitos" required />
+            </div>
+            <div class="add-descricao">
+                <label for="descricao">Adicione a descrição resumida do evento:</label>
+                <input type="text" name="descricao" id="descricao" required />
             </div>
         </div>
-    </div>
-
-    <div id="etapa3" class="etapa" style="display: none;">
-        <div class="modal-actions"> <button class="botao-adquirir">Adquirir</button>
-            <p>Exige o uso de Wyden Coins.</p>
-            <button class="botao-inscrever">Inscrever-se</button>
-            <p>Permite participar do evento gratuitamente.</p>
-        </div>
-        <div class="modal-actions">
-            <button onclick="mostrarEtapa('etapa2')" class="botao-terciario">Anterior</button>
-            <button class="botao-concluir">Concluir</button>
-        </div>
-    </div>
+    </form>
 
     <script src="js/script.js" defer></script>
 
