@@ -352,6 +352,7 @@ header a img{
 .botao-secundario:hover {
     background-color: #44003d;
 }
+
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(-50px); }
             to { opacity: 1; transform: translateY(0); }
