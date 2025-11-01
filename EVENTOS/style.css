@@ -12,13 +12,11 @@
 }
 
 body{
-
     background: white;
     height: 100vh;
 }
 
 .interface{
-
     max-width: 1280px;
     margin: 0 0;
 
@@ -27,7 +25,6 @@ body{
 /*ESTILO MENU*/
 
 header{
-
     padding: 20px 4%;
 }
 
@@ -86,8 +83,6 @@ header a img{
 }
 
 /*ANIMAÇÃO MENU*/
-
-
 /*QUADRO EVENTOS*/
 
 .eventos{
@@ -104,11 +99,11 @@ header a img{
 }
 
 .eventos-card{
-    height: 50rem;
+    height: 55rem;
     padding: 1rem 1rem; /* espaço extra no fundo pro botão */
     background: #88005b;
     margin-block: 0.75rem;
-    margin-left: 0.5rem;
+    margin-left: 1rem;
     margin-right: 0.5rem;
     border-radius: 16px;
     backdrop-filter: blur(5px);
@@ -117,6 +112,88 @@ header a img{
     transition: all 0.3s ease;
     cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.30) 0px 3px 8px;
+}
+
+.eventos-card:hover {
+  box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
+  transform: translateY(-10px) scale(1.03);
+}
+
+.evento-image{
+    height: 360px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.evento-titulo {
+    color: white;
+    margin-bottom: 5px;
+    font-size: 1.5rem;
+}
+
+/* Estilo para organizar os detalhes do evento lado a lado */
+.detalhes-lista {
+    margin-top: 1rem;
+    padding: 10px;
+    border-radius: 19px;
+    background-color: rgb(114, 5, 81); /* Um fundo leve para destaque */
+    color: rgb(255, 255, 255); /* Garante que o texto seja visível no seu fundo escuro */
+}
+
+/* Define que cada linha de termo/definição é um flex container */
+.detalhes-lista dt {
+    font-weight: bold;
+    width: 100px; 
+    margin-bottom: 0.5rem;
+    display: inline-block;
+}
+
+/* Estilo para os valores da lista (a informação) */
+.detalhes-lista dd {
+    /* Define o valor para ficar na mesma linha que o DT */
+    display: inline-table;
+    /* Remove o recuo padrão do navegador para o DD */
+    margin-left: 0;
+    margin-bottom: 0.5rem;
+    width: calc(100% - 105px); 
+}
+
+/* ======================================================= */
+/* ESTILOS PADRÃO (DESKTOPS e TELAS MAIORES) */
+/* ======================================================= */
+.descricao-completa {
+    color: white; 
+    /* Altura Máxima em telas grandes (200px) */
+    max-height: 200px; 
+    overflow-y: auto;
+    padding-right: 15px; 
+    margin-top: 20px;
+    padding-top: 15px;
+}
+
+.descricao-completa p {
+    text-align: justify;
+    margin: 0;
+}
+
+/* ======================================================= */
+/* MEDIA QUERY (AJUSTE PARA CELULARES) */
+/* ======================================================= */
+
+/* Regras que se aplicam APENAS quando a largura da tela for de 600px ou menos */
+@media (max-width: 600px) {
+    
+    .descricao-completa {
+        /* 1. Altura Máxima Reduzida: 
+           Reduz a altura máxima para que a barra de rolagem não ocupe muito espaço vertical na tela do celular. */
+        max-height: 150px; 
+        
+        /* 2. Padding Ajustado: 
+           Reduz o padding interno para dar mais espaço ao conteúdo */
+        padding-right: 10px; 
+        padding-top: 10px;
+        margin-top: 15px;
+    }
 }
 
 @media screen and (min-width: 600px) {
@@ -131,36 +208,6 @@ header a img{
     }
 }
 
-.eventos-card:hover {
-  box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
-  transform: translateY(-10px) scale(1.03);
-}
-
-.evento-image{
-    height: 360px;
-    width: 100%;
-    object-fit: cover;
-}
-
-.info-evento{
-    color: white;
-    margin-bottom: 5px;
-    font-size: 1.5rem;
-}
-
-.paragra-evento{
-    color: rgba(226, 232, 240, 1.0);
-    text-align: justify;
-    line-height: 1.5rem;
-    margin: auto;
-    padding-bottom: 3rem;
-    font-size: 1.25rem;
-}
-
-.caixa-texto-evento{
-    padding: 1rem;
-}
-
 .botao-evento {
    position: absolute;
    bottom: 1rem;
@@ -171,14 +218,14 @@ header a img{
    border: none;
    border-radius: 8px;
    cursor: pointer;
-   width: calc(100% - 4rem); /* respeita o padding lateral do card */
+   width: calc(100% - 2rem); /* respeita o padding lateral do card */
    transition: background 0.2s ease;
    font-size: 1.7rem;
    line-height: 1rem;
 }
 
 .botao-evento:hover{
-    transform:scale(1.05);
+    transform:scale(1.02);
     box-shadow: 0 5px 15px #e1bfd6;
 }
 
