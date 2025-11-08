@@ -85,17 +85,17 @@ header a img{
 /*ANIMAÇÃO MENU*/
 /*QUADRO EVENTOS*/
 
-.eventos{
-    padding: 6rem 2rem;
-    gap: 18px;
-    display: grid;
-    grid-template-columns: 1fr;
-}
-
 .eventos-titulo{
     text-align: center;
     font-size: 2rem;
-    margin: 50px;
+    margin: 10px;
+}
+
+.eventos{
+    display: grid;
+    padding: 6rem 2rem;
+    gap: 18px;
+    grid-template-columns: 1fr;
 }
 
 .eventos-card{
@@ -110,7 +110,6 @@ header a img{
     border: 1px solid var(--vidro);
     overflow: hidden;
     transition: all 0.3s ease;
-    cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.30) 0px 3px 8px;
 }
 
@@ -124,6 +123,7 @@ header a img{
     width: 100%;
     object-fit: cover;
 }
+
 .delete-botao-evento {
     position: absolute;
     top: 15px;    /* Distância do topo */
@@ -146,10 +146,6 @@ header a img{
 
 .delete-botao-evento:hover {
     background: rgb(212, 125, 208); /* Cor de fundo mais clara ao passar o mouse */
-}
-
-.fechar-modal {
-    visibility: hidden;
 }
 
 .evento-titulo {
@@ -235,7 +231,7 @@ header a img{
     }
 }
 
-.botao-evento {
+.botao-evento { /*Editar evento*/
    position: absolute;
    bottom: 1rem;
    left: auto;
@@ -256,18 +252,74 @@ header a img{
     box-shadow: 0 5px 15px #e1bfd6;
 }
 
-.botao-principal {
-    position: flex;
-    bottom: 1rem;
-    left: auto;
-    color: #ffffff;
-    background: #88005b;
-    padding: 1rem 2rem;
+.botao-principal { /*Adicionar evento*/
+    display: block;
+    width: 100%;
+    max-width: 600px;            
+    padding: 13px;
+    font-family: 'Teachers', sans-serif;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    background-color: #88005b;
+    cursor: pointer; 
+    font-size: 27px;
+}
+
+.botao-principal:hover{
+    transform:scale(1);
+    box-shadow: 0 5px 10px #350224;
+}
+
+.close-modal { /* X do card*/
+    border: none;
+    background: transparent;
+    height: 1rem;
+    width: 1rem;
+    font-size: 2.5rem;
+    color: #44002d;
     cursor: pointer;
-    width: calc(100% - 2rem); /* respeita o padding lateral do card */
-    transition: 0.2s ease;
-    font-size: 1.7rem;
-    line-height: 1rem; 
+    transition: transform 0.7s ease;
+}
+
+.close-modal:hover {
+    transform: scale(1.1);
+}
+
+.add-evento-card { /* Aqui o card q o adm vai colocar as informações */
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    justify-content: space-around;
+    height: 40rem;
+    padding: 2rem;
+    background: #e5bed9;
+    margin-block: 0.75rem;
+    margin-left: 1rem;
+    margin-right: 0.5rem;
+    border-radius: 16px;
+    box-shadow: rgba(0, 0, 0, 0.30) 0px 3px 8px;
+    transition: all 0.3s ease;
+}
+ 
+.botao-principal.2 { /*Botao salvar*/
+   position: absolute;
+   bottom: 1rem;
+   left: auto;
+   color: #44002d;
+   background: #e1bfd6;
+   padding: 1rem 2rem;
+   border: none;
+   border-radius: 8px;
+   cursor: pointer;
+   width: calc(100% - 2rem); /* respeita o padding lateral do card */
+   transition: 0.2s ease;
+   font-size: 1.7rem;
+   line-height: 1rem;
+}
+
+.add-botao-enviar:hover {
+    transform: scale(1.02);
+    caret-color: 0 5px 15px #350224;
 }

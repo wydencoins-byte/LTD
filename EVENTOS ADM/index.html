@@ -36,7 +36,7 @@
     <div class="eventos">
 
         <!--Card1-->
-        <div class="eventos-card" id="card1">
+        <div class="eventos-card" id="modalConfirmacao-1">
             <div class="icones-card">
                 <button class="delete-botao-evento" title="Excluir evento" data-modal-target="modalConfirmacao-1"><i class="fas fa-trash-alt"></i></button>
             </div>
@@ -84,7 +84,7 @@
         </div>
 
         <!--Card2-->
-        <div class="eventos-card" id="card2">
+        <div class="eventos-card" id="modalConfirmacao-2">
             <div class="icones-card">
                 <button class="delete-botao-evento" title="Excluir evento" data-modal-target="modalConfirmacao-2"><i class="fas fa-trash-alt"></i></button>
             </div>
@@ -130,7 +130,7 @@
         </div>    
 
         <!--Card3-->
-        <div class="eventos-card" id="card3">
+        <div class="eventos-card" id="modalConfirmacao-3">
             <div class="icones-card">
                 <button class="delete-botao-evento" title="Excluir evento" data-modal-target="modalConfirmacao-3"><i class="fas fa-trash-alt"></i></button>
             </div>
@@ -176,7 +176,7 @@
         </div>    
 
         <!--Card4-->
-        <div class="eventos-card" id="card4">
+        <div class="eventos-card" id="modalConfirmacao-4">
             <div class="icones-card">
                 <button class="delete-botao-evento" title="Excluir evento" data-modal-target="modalConfirmacao-4"><i class="fas fa-trash-alt"></i></button>
             </div>
@@ -222,7 +222,7 @@
         </div>    
 
         <!--Card5-->
-        <div class="eventos-card" id="card5">
+        <div class="eventos-card" id="modalConfirmacao-">
             <div class="icones-card">
                 <button class="delete-botao-evento" title="Excluir evento" data-modal-target="modalConfirmacao-5"><i class="fas fa-trash-alt"></i></button>
             </div>
@@ -271,9 +271,12 @@
 
     <form action="" method="post">
         <div class="botao-add-card">
-            <input type="submit" name="botaoCadastrar" class="botao-principal" value="Adicionar evento" />
+            <input type="button" name="botaoCadastrar" class="botao-principal" id="abrirCard" value="Adicionar evento" />
         </div>
-        <div class="add-evento-card">
+        <div class="add-evento-card" id="eventoCard" style="display: none;">
+            <div class="botao-fechar-modal" id="eventoCard">
+                <button class="close-modal" id="fecharBtn">x</button>
+            </div>
             <div class="add-imagem">
                 <label for="imagem">Imagem do evento:</label>
                 <input type="file" name="imagem" id="imagem" required /> <!-- tem que fazer uma lógica no js para verificar se esse arquivo é uma imgagem (.png, .jpg, etc...) -->
@@ -314,9 +317,12 @@
                 <label for="descricao">Descrição do evento:</label>
                 <textarea name="descricao" id="descricao" rows="5" required></textarea>
         </div>
+        <div class="add-botao-enviar">
+            <input type="submit" name="botaoEnviar" class="botao-principal.2" value="Salvar" />
+        </div>
     </form>
 
-    <script src="js/script.js" defer></script>
+    <script src="script.js" defer></script>
 
 </body>
 </html>
