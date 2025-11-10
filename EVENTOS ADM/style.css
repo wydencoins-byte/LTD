@@ -112,12 +112,42 @@ header a img{
     overflow: hidden;
     transition: all 0.3s ease;
     box-shadow: rgba(0, 0, 0, 0.30) 0px 3px 8px;
+    
 }
 
-.eventos-card:hover {
-  box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
-  transform: translateY(-10px) scale(1.03);
+
+/* ======================================================= */
+/* MEDIA QUERY (AJUSTE PARA CELULARES) */
+/* ======================================================= */
+
+/* Regras que se aplicam APENAS quando a largura da tela for de 600px ou menos */
+@media (max-width: 600px) {
+    
+    .descricao-completa {
+        /* 1. Altura Máxima Reduzida: 
+           Reduz a altura máxima para que a barra de rolagem não ocupe muito espaço vertical na tela do celular. */
+        max-height: 150px; 
+        
+        /* 2. Padding Ajustado: 
+           Reduz o padding interno para dar mais espaço ao conteúdo */
+        padding-right: 10px; 
+        padding-top: 10px;
+        margin-top: 15px;
+    }
 }
+
+@media screen and (min-width: 600px) {
+    .eventos {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .eventos {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
 
 .evento-image{
     height: 360px;
@@ -164,13 +194,12 @@ header a img{
 .modal-content {
     size: auto;
     margin-top: 15rem;
-    margin-left: 3.5rem;
-    margin-right: 3.5rem;
+    margin-left: 4rem;
     background-color: #fefefe;
     padding: 1.5rem;
     border-radius: 12px;
     width: 80%;
-    max-width: 500px;
+    max-width: 480px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     animation: fadeIn 0.3s ease;
 }
@@ -251,39 +280,7 @@ header a img{
     margin: 0;
 }
 
-/* ======================================================= */
-/* MEDIA QUERY (AJUSTE PARA CELULARES) */
-/* ======================================================= */
-
-/* Regras que se aplicam APENAS quando a largura da tela for de 600px ou menos */
-@media (max-width: 600px) {
-    
-    .descricao-completa {
-        /* 1. Altura Máxima Reduzida: 
-           Reduz a altura máxima para que a barra de rolagem não ocupe muito espaço vertical na tela do celular. */
-        max-height: 150px; 
-        
-        /* 2. Padding Ajustado: 
-           Reduz o padding interno para dar mais espaço ao conteúdo */
-        padding-right: 10px; 
-        padding-top: 10px;
-        margin-top: 15px;
-    }
-}
-
-@media screen and (min-width: 600px) {
-    .eventos {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media screen and (min-width: 900px) {
-    .eventos {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-}
-
-.botao-evento { /*Editar evento*/
+.botao-evento { /*Editar evento botao*/
    position: absolute;
    bottom: 1rem;
    left: auto;
@@ -319,7 +316,6 @@ header a img{
     text-align: center;
 }
 
-
 .botao-principal { /*Adicionar evento*/
     display: block;
     width: 60%;
@@ -340,7 +336,7 @@ header a img{
     background: #b12900;
 }
 
-.close-modal { /* X do card*/
+.close-modal { /* X do card de formulario do adm*/
     width: 4%;
     text-align: right;
     margin-bottom: 0px;
@@ -353,30 +349,25 @@ header a img{
     transition: transform 0.7s ease;
 }
 
-.add-evento-card { /* Aqui o card q o adm vai colocar as informações */
-    position: fixed;
+.add-evento-card { /*formulario do adm*/
+    position: fixed; 
     top: 50%;
-    left: 49%;
-    transform: translate(-50%, -50%);
-    width: 90vw;
-    max-width: 500px;
-    height: auto;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    z-index: 999999; 
+    box-shadow: 0 0 0 5000px rgba(0, 0, 0, 0.6); 
+    width: 90vw; 
+    max-width: 550px;
+    height: 60vh;
     max-height: 95vh;
-    overflow-y: auto;
+    overflow-y: auto; 
+    background: #e5bed9;
+    border-radius: 16px;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
-    text-align: justify;
-    justify-content: space-around;
-    width: 40rem;
-    height: 40rem;
-    padding: 2rem;
-    background: #e5bed9;
-    margin-block: 0.75rem;
-    margin-left: 1rem;
-    margin-right: 0.5rem;
-    border-radius: 16px;
-    box-shadow: 0 0 0 5000px rgba(0, 0, 0, 0.6);
-    transition: all 0.3s ease;
+    gap: 15px; 
+    pointer-events: auto;
 }
 
 
