@@ -155,7 +155,7 @@ header a img{
     object-fit: cover;
 }
 
-.delete-botao-evento {
+.delete-botao-evento { /* Botão de deletar evento (lixeira) */
     position: absolute;
     top: 15px;    /* Distância do topo */
     right: 15px;  /* Distância da direita */
@@ -179,7 +179,7 @@ header a img{
     background: rgb(212, 125, 208); /* Cor de fundo mais clara ao passar o mouse */
 }
 
-.modal-overlay {
+.modal-overlay { /* Fundo escuro do modal de deletar evento */
     position: absolute;
     top: 50%;
     left: 50%;
@@ -187,34 +187,44 @@ header a img{
     width: 100%;
     height: 100%;
     display: flex;
-    background-color: rgba(0, 0, 0, 0.4); /* fundo escuro translúcido */
+    background-color: rgba(0, 0, 0, 0.4);
     z-index: 20;
 }
 
-.modal-content {
-    size: auto;
-    margin-top: 15rem;
-    margin-left: 4rem;
+.modal-content { /* Conteúdo do modal de deletar evento */
+    position: relative;
     background-color: #fefefe;
-    padding: 1.5rem;
+    margin: auto;
+    padding: 1rem;
     border-radius: 12px;
     width: 80%;
-    max-width: 480px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(49, 38, 38, 0.2);
     animation: fadeIn 0.3s ease;
 }
 
-.fechar-modal {
-    top: 1rem;
-    left: 1rem;
-    right: 1rem;
+.modal-content h3 { /* Título do modal de deletar evento */
+    margin-top: 0;
+    color: #000000;
+    text-align: center;
+}
+
+.fechar-modal { /* Botão fechar do modal de deletar Xzinho */
+    display: block;
+    margin-top: 0%;
+    margin-left: 95%;
     background: transparent;
     border: none;
     font-size: 2rem;
     cursor: pointer;
 }
 
-.botao-lixeira {
+.botao-lixeira { /* Botão confirmar deleção do evento 'sim' */
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
     background-color: #e25323;
     color: white;
     border: none;
@@ -240,8 +250,8 @@ header a img{
     margin-top: 1rem;
     padding: 10px;
     border-radius: 19px;
-    background-color: rgb(114, 5, 81); /* Um fundo leve para destaque */
-    color: rgb(255, 255, 255); /* Garante que o texto seja visível no seu fundo escuro */
+    background-color: rgb(114, 5, 81); 
+    color: rgb(255, 255, 255); 
 }
 
 /* Define que cada linha de termo/definição é um flex container */
@@ -254,20 +264,14 @@ header a img{
 
 /* Estilo para os valores da lista (a informação) */
 .detalhes-lista dd {
-    /* Define o valor para ficar na mesma linha que o DT */
     display: inline-table;
-    /* Remove o recuo padrão do navegador para o DD */
     margin-left: 0;
     margin-bottom: 0.5rem;
     width: calc(100% - 105px); 
 }
 
-/* ======================================================= */
-/* ESTILOS PADRÃO (DESKTOPS e TELAS MAIORES) */
-/* ======================================================= */
 .descricao-completa {
     color: white; 
-    /* Altura Máxima em telas grandes (200px) */
     max-height: 200px; 
     overflow-y: auto;
     padding-right: 15px; 
@@ -337,10 +341,8 @@ header a img{
 }
 
 .close-modal { /* X do card de formulario do adm*/
-    width: 4%;
-    text-align: right;
-    margin-bottom: 0px;
-    margin-top: auto;
+    display: block;
+    margin-left: auto;
     border: none;
     background: transparent;
     font-size: 2.5rem;
@@ -350,6 +352,7 @@ header a img{
 }
 
 .add-evento-card { /*formulario do adm*/
+    display: flex;
     position: fixed; 
     top: 50%;
     left: 50%;
@@ -357,24 +360,25 @@ header a img{
     z-index: 999999; 
     box-shadow: 0 0 0 5000px rgba(0, 0, 0, 0.6); 
     width: 90vw; 
-    max-width: 550px;
-    height: 60vh;
-    max-height: 95vh;
+    max-width: 500px;
+    height: 80vh;
+    max-height: 650px;
     overflow-y: auto; 
     background: #e5bed9;
     border-radius: 16px;
     padding: 2rem;
-    display: flex;
     flex-direction: column;
     gap: 15px; 
+    font-size: 1.1rem;
+    line-height: 1.8rem;
     pointer-events: auto;
 }
 
-
 .botao-principal-2 { /* Botão salvar do card */
     display: block;
-    width: 50%;
-    max-width: 400px;            
+    position: relative;
+    width: 10rem;    
+    margin: auto;
     padding: 10px;
     font-family: 'Teachers', sans-serif;
     border: none;
@@ -384,7 +388,6 @@ header a img{
     background-color: #88005b;
     cursor: pointer; 
     font-size: 27px;
-    margin-left: 25%;
 }
 
 .botao-principal-2:hover{

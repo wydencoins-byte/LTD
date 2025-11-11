@@ -214,7 +214,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             // 3. Define a URL de destino
-            const urlBackend = 'seu_endpoint_salvar_evento.php'; // Trocar pela URL real do backend
+            const urlBackend = 'seu_endpoint_salvar_evento.php'; // Trocargit push
+            //  pela URL real do backend
 
             
             // Define o caminho da imagem que será exibida no card (Simulação Frontend)
