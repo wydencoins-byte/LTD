@@ -330,7 +330,7 @@ header a img {
   box-shadow: 0 5px 15px #e1bfd6;
 }
 
-/* Container que envolve o botão "Adicionar Evento" (Fixo na parte inferior) */
+/* Container que envolve o botão "Cadastrar Evento" (Fixo na parte inferior) */
 .botao-add-card {
   position: fixed;
   bottom: 4px;
@@ -398,6 +398,7 @@ header a img {
   overflow-y: auto;
   background: #ffffff;
   border-radius: 16px;
+  border: 2px solid #88005b;
   padding: 2rem;
   flex-direction: column;
   gap: 15px;
@@ -416,7 +417,7 @@ header a img {
 .add-evento-card textarea {
   width: 100%;
   padding: 8px;
-  border: 2px solid #8f005f;
+  border: 2px solid #88005b;
   border-radius: 4px;
   box-sizing: border-box;
 }
