@@ -207,88 +207,70 @@
         </div>
 
         <div class="form-grid">
-          <div class="add-imagem">
-            <label for="imagem">Imagem do evento:</label>
-            <input type="file" name="imagem" id="imagem" accept="image/*" />
-            <img
-              id="previewImagemAtual"
-              src=""
-              alt="Preview Imagem"
-              style="display: none; max-width: 100px; margin-top: 10px"
-            />
-          </div>
+            <div class="add-imagem">
+                <label for="imagem">Imagem do evento:</label>
+                <input type="file" name="imagem" id="imagem" accept="image/*" />
+                <img
+                id="previewImagemAtual"
+                src=""
+                alt="Preview Imagem"
+                style="display: none; max-width: 100px; margin-top: 10px"
+                />
+            </div>
 
-          <div class="add-titulo">
-            <label for="titulo">Título:</label>
-            <input type="text" name="titulo" id="titulo" required />
-          </div>
+            <div class="add-titulo">
+                <label for="titulo">Título:</label>
+                <input type="text" name="titulo" id="titulo" required />
+            </div>
 
-          <div class="add-data">
-            <label for="data-evento">Data do Evento:</label>
-            <input type="date" name="data-evento" id="data-evento" required />
-          </div>
+            <div class="add-data">
+                <label for="data-evento">Data do evento:</label>
+                <input type="date" name="data-evento" id="data-evento" required />
+            </div>
 
-          <div class="add-horario-inicio">
-            <label for="horario-inicio">Hora de Início:</label>
-            <input
-              type="time"
-              name="horario-inicio"
-              id="horario-inicio"
-              required
-            />
-          </div>
+            <div class="add-horario-inicio">
+                <label for="horario-inicio">Hora de início:</label>
+                <input type="time" name="horario-inicio" id="horario-inicio" required/>
+            </div>
 
-          <div class="add-horario-fim">
-            <label for="horario-fim">Hora de Término:</label>
-            <input type="time" name="horario-fim" id="horario-fim" required />
-          </div>
+            <div class="add-horario-fim">
+                <label for="horario-fim">Hora de término:</label>
+                <input type="time" name="horario-fim" id="horario-fim" required />
+            </div>
 
-          <div class="add-local">
-            <label for="local">Local:</label>
-            <input type="text" name="local" id="local" required />
-          </div>
+            <div class="add-local">
+                <label for="local">Local:</label>
+                <input type="text" name="local" id="local" required />
+            </div>
 
-          <div class="add-valor">
-            <label for="valor">Valor (WC):</label>
-            <input type="number" name="valor" id="valor" required />
-          </div>
+            <div class="add-valor">
+                <label for="valor">Valor:</label>
+                <input type="number" name="valor" id="valor" required />
+            </div>
 
-          <div class="add-requisitos">
-            <label for="requisitos">Requisitos:</label>
-            <input type="text" name="requisitos" id="requisitos" required />
-          </div>
+            <div class="add-requisitos">
+                <label for="requisitos">Requisitos:</label>
+                <input type="text" name="requisitos" id="requisitos" required />
+            </div>
 
-          <div class="add-link-inscricao full-width">
-            <label for="link-inscricao"
-              >Link da Inscrição:</label
-            >
-            <input
-              type="url"
-              name="link-inscricao"
-              id="link-inscricao"
-              placeholder="https://link-de-inscricao.com"
-            />
-          </div>
+            <div class="add-descricao full-width">
+                <label for="descricao">Descrição:</label>
+                <textarea
+                name="descricao"
+                id="descricao"
+                rows="4"
+                required
+                ></textarea>
+            </div>
 
-          <div class="add-descricao full-width">
-            <label for="descricao">Descrição:</label>
-            <textarea
-              name="descricao"
-              id="descricao"
-              rows="4"
-              required
-            ></textarea>
-          </div>
+            <div class="add-link-inscricao full-width">
+                <label for="link-inscricao">Link para inscrição:</label>
+                <input type="url"name="link-inscricao" id="link-inscricao" placeholder="https://link-de-inscricao.com"/>
+            </div>
 
-          <div class="add-botao-enviar full-width">
-            <input
-              type="submit"
-              name="botaoEnviar"
-              class="botao-principal-2"
-              id="salvarEventoBtn"
-              value="Cadastrar"
-            />
-          </div>
+            <div class="add-botao-enviar full-width">
+                <input type="submit" name="botaoEnviar" class="botao-principal-2" id="salvarEventoBtn" value="Cadastrar"/>
+            </div>
         </div>
       </form>
     </div>

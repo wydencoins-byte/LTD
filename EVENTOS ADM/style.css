@@ -395,10 +395,10 @@ header a img {
   box-shadow: 0 0 0 5000px rgba(0, 0, 0, 0.6);
   width: 90vw;
   max-width: 500px;
-  height: 80vh;
-  max-height: 650px;
+  height: 90vh;
+  max-height: 770px;
   overflow-y: auto;
-  background: #e5bed9;
+  background: #ffffff;
   border-radius: 16px;
   padding: 2rem;
   flex-direction: column;
@@ -408,13 +408,7 @@ header a img {
   pointer-events: auto;
 }
 
-/* Novo formato em Grid */
-.add-evento-card .form-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* Duas colunas por padrão (desktop) */
-  gap: 10px;
-  padding: 10px 0;
-}
+
 
 .add-evento-card label {
   display: block;
@@ -426,7 +420,7 @@ header a img {
 .add-evento-card textarea {
   width: 100%;
   padding: 8px;
-  border: 1px solid #ccc;
+  border: 2px solid #8f005f;
   border-radius: 4px;
   box-sizing: border-box;
 }
@@ -441,7 +435,7 @@ header a img {
   /* Botão salvar do card */
   display: block;
   position: relative;
-  width: 10rem;
+  width: 15rem;
   margin: 15px auto 0 auto;
   padding: 10px;
   font-family: "Teachers", sans-serif;
