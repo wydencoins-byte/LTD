@@ -98,8 +98,8 @@ header a img {
 
 .eventos-card {
   position: relative;
-  height: 55rem;
-  padding: 1rem 1rem; /* espaço extra no fundo pro botão */
+  min-height: 50rem;
+  padding: 1rem 1rem 5rem 1rem; /* Padding inferior para o link "Inscreva-se" */
   background: #88005b;
   margin-block: 0.75rem;
   margin-left: 1rem;
@@ -108,19 +108,17 @@ header a img {
   backdrop-filter: blur(5px);
   border: 1px solid var(--vidro);
   overflow: hidden;
-  transition: all 0.3s ease; /* Transição para o zoom e sombra */
+  transition: all 0.3s ease;
+  cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 8px;
 }
 
-/* ANIMAÇÃO DE ZOOM AO HOVER NOS CARDS */
 .eventos-card:hover {
-  transform: scale(1.03); /* Aproxima o card um pouco */
-  box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px; /* Sombra mais intensa */
+  transform: scale(1.03); 
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px; 
 }
 
-/* ======================================================= */
 /* MEDIA QUERY (AJUSTE PARA CELULARES) */
-/* ======================================================= */
 
 /* Regras que se aplicam APENAS quando a largura da tela for de 600px ou menos */
 @media (max-width: 600px) {
@@ -330,27 +328,12 @@ header a img {
   box-shadow: 0 5px 15px #e1bfd6;
 }
 
-/* Container que envolve o botão "Cadastrar Evento" (Fixo na parte inferior) */
-.botao-add-card {
-  position: fixed;
-  bottom: 4px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1000;
-  width: 80%;
-  max-width: 450px;
-  padding: 0;
-  background: transparent;
-  border-radius: 0;
-}
-
 .botao-principal {/*Cadastar evento*/
   display: block;
-  width: 90%;
+  width: 20%;
   height: 70px;
-  margin: auto;
   max-width: 700px;
-  padding: 13px;
+  margin: auto;
   font-family: "Teachers", sans-serif;
   border: none;
   border-radius: 5px;
@@ -402,7 +385,7 @@ header a img {
   padding: 2rem;
   flex-direction: column;
   gap: 15px;
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 1.8rem;
   pointer-events: auto;
 }
@@ -422,14 +405,7 @@ header a img {
   box-sizing: border-box;
 }
 
-/* Faz com que a descrição e o botão ocupem a largura total */
-.add-descricao,
-.full-width {
-  grid-column: 1 / -1;
-}
-
-.botao-principal-2 {
-  /* Botão salvar do card */
+.botao-principal-2 { /* Botão salvar do card */
   display: block;
   position: relative;
   width: 15rem;
