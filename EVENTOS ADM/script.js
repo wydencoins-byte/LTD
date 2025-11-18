@@ -5,10 +5,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const eventoCardModal = document.getElementById("eventoCard");
   const abrirCardBtn = document.getElementById("abrirCard");
   const fecharBtn = document.getElementById("fecharBtn");
+  // botão que abre o formulário; usado como referência para inserir cards
+  const botaoAddCard = document.querySelector('.botao-add-card');
   const inputImagem = document.getElementById("imagem");
   const previewImagem = document.getElementById("previewImagemAtual");
   const salvarEventoBtn = document.getElementById("salvarEventoBtn");
   const inputCardIdEmEdicao = document.getElementById("cardIdEmEdicao");
+  
   // NOVO: Constante para o campo Link da Inscrição
   const inputLinkInscricao = document.getElementById("link-inscricao");
 
@@ -19,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function limparFormularioParaCadastro() {
     formNovoEvento.reset();
     inputCardIdEmEdicao.value = ""; // Limpa o ID de edição
-    salvarEventoBtn.value = "Cadastrar";
+    salvarEventoBtn.value = "Cadastrar Evento";
 
     if (previewImagem) {
       previewImagem.src = IMAGEM_PADRAO_SRC;
@@ -334,7 +337,20 @@ document.addEventListener("DOMContentLoaded", function () {
                         </div>
                     `;
 
-        containerEventos.insertAdjacentHTML("beforeend", novoCardHTML);
+        // Insere o novo card antes do botão de adicionar, assim o botão
+        // permanece sempre após os cards e desce conforme são adicionados.
+        if (botaoAddCard && botaoAddCard.parentNode === containerEventos) {
+          botaoAddCard.insertAdjacentHTML('beforebegin', novoCardHTML);
+        } else {
+          // Se o botão de adicionar existir dentro do container, insere o novo
+          // card imediatamente antes dele para que o botão continue sendo o
+          // último elemento visual do grid (desça conforme cards são adicionados).
+          if (botaoAddCard && botaoAddCard.parentNode === containerEventos) {
+            botaoAddCard.insertAdjacentHTML('beforebegin', novoCardHTML);
+          } else {
+            containerEventos.insertAdjacentHTML("beforeend", novoCardHTML);
+          }
+        }
       }
 
       // Finalização da operação (limpeza e fechamento)

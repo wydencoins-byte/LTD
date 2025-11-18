@@ -93,7 +93,7 @@ header a img {
 .eventos-card {
   position: relative;
   min-height: 50rem;
-  padding: 1rem 1rem 5rem 1rem; /* Padding inferior para o link "Inscreva-se" */
+  padding: 1rem 1rem 3rem 1rem; /* Padding inferior para o link "Inscreva-se" */
   background: #88005b;
   margin-block: 0.75rem;
   margin-left: 1rem;

@@ -96,10 +96,35 @@ header a img {
   grid-template-columns: 1fr;
 }
 
+/* Centraliza o botão de adicionar e garante que ele ocupe a linha completa
+   do grid quando presente. Não depende de cards de exemplo para funcionar. */
+.eventos > .botao-add-card {
+  grid-column: 1 / -1;
+  justify-self: center;
+  align-self: start;
+}
+
+.botao-add-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  margin: 1.5rem auto;
+}
+
+.botao-add-card .botao-principal {
+  /* largura aumentada para ficar mais visível em telas maiores */
+  width: min(420px, 90%);
+  min-width: 300px;
+  height: 90px;
+  margin: 0;
+}
+
+
 .eventos-card {
   position: relative;
   min-height: 50rem;
-  padding: 1rem 1rem 5rem 1rem; /* Padding inferior para o link "Inscreva-se" */
+  padding: 1rem 1rem 3rem 1rem; /* Padding inferior para o link "Inscreva-se" */
   background: #88005b;
   margin-block: 0.75rem;
   margin-left: 1rem;
@@ -125,7 +150,6 @@ header a img {
   .descricao-completa {
     /* Altura Máxima Reduzida para celulares */
     max-height: 150px;
-
     padding-right: 10px;
     padding-top: 10px;
     margin-top: 15px;
@@ -153,9 +177,11 @@ header a img {
 }
 
 .evento-image {
-  height: 360px;
   width: 100%;
+  height: auto;
+  max-height: 360px;
   object-fit: cover;
+  margin-bottom: 1rem;
 }
 
 .delete-botao-evento {
@@ -355,6 +381,28 @@ header a img {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35);
 }
 
+.botao-principal-2 { /* Botão salvar do card */
+  display: block;
+  position: relative;
+  width: 15rem;
+  margin: 15px auto 0 auto;
+  padding: 10px;
+  font-family: "Teachers", sans-serif;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  background-color: #88005b;
+  cursor: pointer;
+  font-size: 27px;
+  transition: all 0.3s ease;
+}
+
+.botao-principal-2:hover {
+  background: #4a0324;
+  transform: scale(1.05);
+}
+
 .close-modal {
   /* X do card de formulario do adm*/
   display: block;
@@ -366,6 +414,7 @@ header a img {
   cursor: pointer;
   transition: transform 0.7s ease;
 }
+
 
 .add-evento-card {
   /*Modal/Formulário do Adm*/
@@ -392,39 +441,202 @@ header a img {
   pointer-events: auto;
 }
 
-.add-evento-card label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.add-evento-card input:not([type="submit"]),
-.add-evento-card textarea {
+/* Grid do formulário */
+.add-evento-card .form-grid{
   width: 100%;
-  padding: 8px;
-  border: 2px solid #88005b;
-  border-radius: 4px;
-  box-sizing: border-box;
+  max-width: 780px;
+  gap: 12px;
+  margin-top: 6px;
 }
 
-.botao-principal-2 { /* Botão salvar do card */
-  display: block;
-  position: relative;
-  width: 15rem;
-  margin: 15px auto 0 auto;
-  padding: 10px;
-  font-family: "Teachers", sans-serif;
+
+/* Campo genérico (cada bloco) - borda magenta 2px e radius */
+.add-evento-card .form-grid > div:not(.add-botao-enviar){
+  border: solid;
+  border-radius: 8px;
+  padding: 10px 12px;
+  background: transparent;
+}
+
+/* Pequeno ajuste para o bloco do botão (não precisa altura de input) */
+.add-evento-card .add-botao-enviar{
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+  gap:12px;
+  padding: 8px 12px;
+}
+
+/* Ajuste: mover o botão de cadastrar/salvar mais para a direita
+*/
+.add-evento-card .add-botao-enviar .botao-principal-2{
+  margin: 15px 0 0 0 !important; /* remove center auto-margins */
+  margin-left: auto !important;  /* empurra o botão para a direita no contexto flex */
+  display: inline-block;
+}
+
+/* Para inputs submit que usem a mesma classe */
+.add-evento-card .add-botao-enviar input[type="submit"],
+.add-evento-card .add-botao-enviar input.botao-principal-2{
+  margin: 15px 0 0 0 !important;
+  margin-left: auto !important;
+}
+
+/* Labels */
+.add-evento-card label{
+  display:block;
+  font-weight:600;
+  font-size:0.95rem;
+  margin-bottom:6px;
+  color: #000000;
+}
+
+/* Inputs comuns (texto, number, date, time, url) */
+.add-evento-card input[type="text"],
+.add-evento-card input[type="number"],
+.add-evento-card input[type="date"],
+.add-evento-card input[type="time"],
+.add-evento-card input[type="url"],
+.add-evento-card input[type="email"],
+.add-evento-card select{
+  width:100%;
+  height: 40px;
+  padding: 8px 10px;
+  font-size:1rem;
+  border: none;
+  background: transparent;
+  outline: none;
+  color: #000;
+}
+
+/* Input file: aparência limpa e alinhada */
+.add-evento-card input[type="file"]{
+  width:100%;
+  padding:8px 4px;
+  font-size:0.95rem;
+  background:transparent;
+  border:none;
+  color: #88005b;
+}
+
+/* Textarea maior (descrição) */
+.add-evento-card textarea{
+  width:100%;
+  min-height:128px;
+  max-height:320px;
+  padding:10px 12px;
+  font-size:1rem;
+  resize:vertical;
+  border:none;
+  background:transparent;
+  outline:none;
+  color: #000;
+  line-height:1.35;
+}
+
+/* Placeholder */
+.add-evento-card select::placeholder,
+.add-evento-card input::placeholder,
+.add-evento-card textarea::placeholder{
+  color: #00000098;
+}
+
+/* Botão principal (Cadastrar) */
+.add-evento-card .botao-principal-2,
+.add-evento-card .botao-principal,
+.add-evento-card input[type="submit"].botao-principal-2{
+  background-color: #88005b;
+  color: #ffffff;
   border: none;
   border-radius: 10px;
-  text-align: center;
-  color: white;
-  background-color: #88005b;
-  cursor: pointer;
-  font-size: 27px;
-  transition: all 0.3s ease;
+  padding: 10px 18px;
+  font-weight:700;
+  font-size:0.95rem;
+  cursor:pointer;
+  text-transform: uppercase;
 }
 
-.botao-principal-2:hover {
-  background: #4a0324;
-  transform: scale(1.05);
+/* Hover/focus do botão */
+.add-evento-card .botao-principal-2:hover,
+.add-evento-card .botao-principal-2:focus{
+  background-color: #6a244c;
+  transform: translateY(-1px);
 }
+
+.add-evento-card input[type="date"],
+.add-evento-card input[type="time"]{
+  background-repeat:no-repeat;
+  background-position:right 12px center;
+  background-size:24px 24px;
+  padding-right: auto;
+  color: #070005;
+}
+
+/* Preview de imagem: max-width 140px (sobrescreve inline) */
+.add-evento-card #previewImagemAtual,
+.add-evento-card .add-imagem img{
+  max-width: var(--preview-max) !important;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: #88005b;
+  object-fit: cover;
+}
+
+/* Forçar altura/visual consistente para inputs dentro do bloco de imagem (quando não houver preview) */
+.add-evento-card .add-imagem input[type="file"]{
+  height: auto;
+  padding-top:6px;
+  padding-bottom:6px;
+}
+
+/* Ajustes de layout para data e horários (se quiser uma linha única no mobile quebra) */
+.add-evento-card .add-data,
+.add-evento-card .add-horario-inicio,
+.add-evento-card .add-horario-fim{
+  display:flex;
+  flex-direction:column;
+}
+
+/* Pequena utilidade para alinhar label+campo inline (se necessário) */
+.add-evento-card .inline-row{
+  display:flex;
+  gap:8px;
+  align-items:center;
+  }
+
+/* Foco acessível para inputs (sombra suave magenta) */
+.add-evento-card select:focus,
+.add-evento-card textarea:focus{
+  box-shadow: 0px 0px 0px 2px #88005b;
+  border-radius: 8px;
+}
+
+/* Força visual consistente do grid em telas pequenas */
+@media (max-width: 720px){
+.add-evento-card .form-grid{
+  grid-template-columns: 1fr;
+}
+}
+
+/* Override adicional para garantir borda 2px nos campos se houver reset global */
+.add-evento-card .form-grid > div:not(.add-botao-enviar){
+  border-style: solid;
+  border-color: #88005b;
+  border-width: 2px;
+  margin-bottom: 5%;
+  border-radius: 8px;
+}
+
+/* Remover borda do contêiner do botão para que o botão não fique "envolvido" por uma borda */
+.add-evento-card .form-grid > .add-botao-enviar{
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent;
+  margin-bottom: 0; /* ajusta se desejar espaçamento diferente */
+  padding: 8px 12px; /* preserve o padding do botão */
+}
+
+
